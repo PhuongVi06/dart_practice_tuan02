@@ -1,0 +1,5 @@
+LT#MH01#Lap trinh Dart#3#8.5#7.0
+TH#MH02#Thuc hanh Flutter#2#8.0#9.0#8.5
+DA#MH03#Do an Co so#2#9.0#8.5
+LT#MH04#Co so du lieu#3#6.0#7.5
+TH#MH05#Thuc hanh Mang#1#7.0#7.0#8.0
