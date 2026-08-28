@@ -1,3 +1,3 @@
 abstract class ITroGia {
-  double ITroGia();
+  double troGia();
 }

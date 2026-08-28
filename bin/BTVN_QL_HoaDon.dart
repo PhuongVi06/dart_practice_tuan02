@@ -1,23 +1,23 @@
 import 'package:dart_application_tuan_02/HoaDon.dart';
-import 'package:dart_application_tuan_02/HoaDon_CN.dart';
-import 'package:dart_application_tuan_02/HoaDon_CT.dart';
-import 'package:dart_application_tuan_02/HoaDon_DL.dart';
-import 'dart.io';
-import 'package:dart_application_tuan_02/QL_HoaDon.dart';
+import 'package:dart_application_tuan_02/HoaDonCN.dart';
+import 'package:dart_application_tuan_02/HoaDonCT.dart';
+import 'package:dart_application_tuan_02/HoaDonDL.dart';
+import 'dart:io';
+import 'package:dart_application_tuan_02/QLHoaDon.dart';
 
 String input(String label) {
   stdout.write(label);
   return stdin.readLineSync() ?? '';
 }
 void main(List<String> arguments) {
-  QL_HoaDon qlhd=QL_HoaDon();
+  QL_HoaDon ql=QL_HoaDon();
   while (true) {
     print('\Menu quản lý hoá đơn');
     print('1. Nhập Hóa đơn Cá nhân');
-    print('2. Nhập Hóa đơn Đa lợi');
+    print('2. Nhập Hóa đơn Đsị lý');
     print('3. Nhập Hóa đơn Công ty');
     print('4. Xuất tất cả Hóa đơn');
-    print('5. Sắp xếp danh sách (Số lượng, Thành tiền)');
+    print('5. Sắp xếp danh sách (tăng dần theo Số lượng, giảm dần theo Thành tiền)');
     print('6. Tính Tổng thành tiền tất cả Hóa đơn');
     print('7. Tính Tổng tiền Trợ giá');
     print('8. Tính Tổng chiết khấu của Hóa đơn Công ty');
@@ -31,7 +31,7 @@ void main(List<String> arguments) {
     switch (chon) {
       case '1':
         print('\n--- Nhập Hóa đơn Cá nhân ---');
-        HoaDon_CN hdCN = HoaDon_CN();
+        HoaDonCN hdCN = HoaDonCN();
         ql.Nhap_1hd_CN(hdCN);
         ql.lstHoaDon.add(hdCN);
         print('=> Thêm hóa đơn thành công!');
@@ -39,7 +39,7 @@ void main(List<String> arguments) {
 
       case '2':
         print('\n--- Nhập Hóa đơn Đa lợi ---');
-        HoaDon_DL hdDL = HoaDon_DL();
+        HoaDonDL hdDL = HoaDonDL();
         ql.Nhap_1hd_DL(hdDL);
         ql.lstHoaDon.add(hdDL);
         print('=> Thêm hóa đơn thành công!');
@@ -47,9 +47,9 @@ void main(List<String> arguments) {
 
       case '3':
         print('\n--- Nhập Hóa đơn Công ty ---');
-        HoaDon_CT hdCT = HoaDon_CT();
+        HoaDonCT hdCT = HoaDonCT();
         ql.Nhap_1hd_CT(hdCT);
-        ql.lstHoaDon.add(hdCT);
+        ql.add(hdCT);
         print('=> Thêm hóa đơn thành công!');
         break;
 
@@ -66,7 +66,7 @@ void main(List<String> arguments) {
         if (ql.lstHoaDon.isEmpty) {
           print('\nDanh sách trống, không thể sắp xếp!');
         } else {
-          ql.SapXep();
+          ql.sapXep();
           print('\n=> Đã sắp xếp xong! Danh sách sau khi sắp xếp:');
           ql.Xuat();
         }
